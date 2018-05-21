@@ -1,0 +1,13 @@
+{
+    "item_name": "Уникальный товар",
+    "item_price": "999",
+    "price_cur": "руб",
+    "item_images": {
+        "image1": "url",
+        "image2": "url",
+        "image3": "url",
+        "image4": "url"
+    },
+    "item_description": {
+    }
+}
