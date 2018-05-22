@@ -1,45 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Super shop</title>
-        <link rel="stylesheet" href="static/css/style.css">
-    </head>
-    <body>
-        <h1>Super shop</h1>
-        <div class="wrapper">
-            <div class="product">
-                <div class="product_menu">
-                    <ul class="product_menu_list">
-                        <li class="memu_list_item"><a href="/">Описание</a></li>
-                        <li class="memu_list_item"><a href="/description">Характеристики</a></li>
-                        <li class="memu_list_item"><a href="/prices">Цены</a></li>
-                        <li class="memu_list_item"><a href="/feedback">Отзывы</a></li>
-                        <li class="memu_list_item"><a href="/analogs">Аналоги</a></li>
-                    </ul>
-                </div> <!-- product_menu -->
-                    <div class="product_pictures">
-                        <div class="product_pictures_smalls">
-                            <div class="product_pictures_smalls picture">
-                                <img src="static/img/item1/small1.jpg" alt="" height="150">
-                            </div>
-                            <div class="product_pictures_smalls picture">
-                                <img src="static/img/item1/small2.jpg" alt="" height="150">
-                            </div>
-                            <div class="product_pictures_smalls picture">
-                                <img src="static/img/item1/small3.jpg" alt="" height="150">
-                            </div>
-                            <div class="product_pictures_smalls picture">
-                                <img src="static/img/item1/small4.jpg" alt="" height="150">
-                            </div>
-                        </div>
-                        <div class="product_pictures_main">
-                            <img src="static/img/item1/big.jpg" alt="Товар" height="600">
-                        </div>
-                    </div> <!-- product_pictures -->
-                    <div class="product_description">
-                    </div><!-- product_description -->
-            </div> <!-- product -->
-        </div> <!-- wrapper -->
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SHOP</title>
+</head>
+<body>
+<h1>Super shop!</h1>
+<div class="wrapper">
+    <div class="showcase">
+
+        {% for item in data %}
+        <div class="item">
+            <a href="item/{{ item }}">
+                <img src="static/img/item{{ item }}/big.jpg" alt="FUCK" height="200">
+                <div class="item_title">
+                    {{ data[item]['name'] }}
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+</body>
 </html>

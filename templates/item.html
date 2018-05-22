@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Super shop</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1><a href="/">Super shop</a></h1>
+<div class="wrapper">
+    <div class="product">
+        <div class="product_menu">
+            <ul class="product_menu_list">
+                <li class="menu_list_item"><a href="/item/{{ id }}">Описание</a></li>
+                <li class="menu_list_item"><a href="{{ id }}/description">Характеристики</a></li>
+                <li class="menu_list_item"><a href="{{ id }}/prices">Цены</a></li>
+                <li class="menu_list_item"><a href="{{ id }}/feedback">Отзывы</a></li>
+                <li class="menu_list_item"><a href="{{ id }}/analogs">Аналоги</a></li>
+            </ul>
+        </div>
+        <div class="product_pictures">
+            <div class="product_pictures_smalls">
+                <div class="product_pictures_smalls picture">
+                    <img src="/static/img/item{{ id }}/small1.jpg" alt="" height="100">
+                </div>
+                <div class="product_pictures_smalls picture">
+                    <img src="/static/img/item{{ id }}/small2.jpg" alt="" height="100">
+                </div>
+                <div class="product_pictures_smalls picture">
+                    <img src="/static/img/item{{ id }}/small3.jpg" alt="" height="100">
+                </div>
+                <div class="product_pictures_smalls picture">
+                    <img src="/static/img/item{{ id }}/small4.jpg" alt="" height="100">
+                </div>
+            </div>
+            <img src="/static/img/item{{ id }}/big.jpg" alt="Товар" height="400">
+        </div>
+    </div> <!-- product_pictures -->
+    <div class="product_description">
+    </div><!-- product_description -->
+</div> <!-- product -->
+</div> <!-- wrapper -->
+</body>
+</html>

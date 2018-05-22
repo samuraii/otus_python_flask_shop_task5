@@ -1,31 +1,39 @@
 from flask import Flask
 from flask import render_template
+import json
 app = Flask(__name__)
 
+with open('data/data.json') as raw_data:
+    data = json.load(raw_data)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', data=data)
 
 
-@app.route('/description')
-def description():
-    return render_template('description.html')
+@app.route('/item/<id>')
+def item(id):
+    return render_template('item.html', id=id)
 
 
-@app.route('/prices')
-def prices():
-    return render_template('prices.html')
+@app.route('/item/<id>/description')
+def description(id):
+    return render_template('description.html',id=id)
 
 
-@app.route('/feedback')
-def feedback():
-    return render_template('feedback.html')
+@app.route('/item/<id>/prices')
+def prices(id):
+    return render_template('prices.html', id=id)
 
 
-@app.route('/analogs')
-def analogs():
-    return render_template('analogs.html')
+@app.route('/item/<id>/feedback')
+def feedback(id):
+    return render_template('feedback.html', id=id)
+
+
+@app.route('/item/<id>/analogs')
+def analogs(id):
+    return render_template('analogs.html', id=id)
 
 
 @app.errorhandler(404)
