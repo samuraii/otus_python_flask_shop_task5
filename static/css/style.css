@@ -1,5 +1,26 @@
+body {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.item {
+    float: left;
+}
+
+.item_title {
+    text-align: center;
+    font-size: 19px;
+}
+
 .product_menu {
     height: 50px;
+}
+
+.picture {
+    height: 100px;
 }
 
 .product_menu_list {
@@ -30,6 +51,21 @@
     background-color: lightgreen;
 }
 
+
 .product_pictures_smalls:not(.picture) {
-    float: left
+    width: 100px;
+    float: left;
+}
+
+.product_right_block {
+    height: 400px;
+    width: 300px;
+    padding: 10px;
+    float: left;
+    
+}
+
+.big_picture {
+    float: left;
+    height: 400px;
 }

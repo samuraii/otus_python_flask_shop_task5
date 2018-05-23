@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Description</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "item.html" %}
+{% block title %}
+- Description
+{% endblock %}
+{% block content %}
+{{ data[id]['characteristics'] }}
+{% endblock %}

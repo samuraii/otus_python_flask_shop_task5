@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Super shop</title>
+    <title>{{ data[id]['name'] }}{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -11,34 +11,42 @@
     <div class="product">
         <div class="product_menu">
             <ul class="product_menu_list">
-                <li class="menu_list_item"><a href="/item/{{ id }}">Описание</a></li>
-                <li class="menu_list_item"><a href="{{ id }}/description">Характеристики</a></li>
-                <li class="menu_list_item"><a href="{{ id }}/prices">Цены</a></li>
-                <li class="menu_list_item"><a href="{{ id }}/feedback">Отзывы</a></li>
-                <li class="menu_list_item"><a href="{{ id }}/analogs">Аналоги</a></li>
+                <li class="menu_list_item"><a href="/item/{{ id }}/">Описание</a></li>
+                <li class="menu_list_item"><a href="description">Характеристики</a></li>
+                <li class="menu_list_item"><a href="prices">Цены</a></li>
+                <li class="menu_list_item"><a href="feedback">Отзывы</a></li>
+                <li class="menu_list_item"><a href="analogs">Аналоги</a></li>
             </ul>
         </div>
-        <div class="product_pictures">
-            <div class="product_pictures_smalls">
-                <div class="product_pictures_smalls picture">
-                    <img src="/static/img/item{{ id }}/small1.jpg" alt="" height="100">
+        <div class="product_wrapper">
+            <div class="product_pictures">
+                    <div class="product_pictures_smalls">
+                        <div class="product_pictures_smalls picture">
+                            <img src="/static/img/item{{ id }}/small1.jpg" alt="" height="100" width="100">
+                        </div>
+                        <div class="product_pictures_smalls picture">
+                            <img src="/static/img/item{{ id }}/small2.jpg" alt="" height="100" width="100">
+                        </div>
+                        <div class="product_pictures_smalls picture">
+                            <img src="/static/img/item{{ id }}/small3.jpg" alt="" height="100" width="100">
+                        </div>
+                        <div class="product_pictures_smalls picture">
+                            <img src="/static/img/item{{ id }}/small4.jpg" alt="" height="100" width="100">
+                        </div>
+                    </div>
+                    <div class="big_picture">
+                        <img src="/static/img/item{{ id }}/small1.jpg" alt="Товар" height="400" width="400" id="big_picture">
+                    </div>
                 </div>
-                <div class="product_pictures_smalls picture">
-                    <img src="/static/img/item{{ id }}/small2.jpg" alt="" height="100">
-                </div>
-                <div class="product_pictures_smalls picture">
-                    <img src="/static/img/item{{ id }}/small3.jpg" alt="" height="100">
-                </div>
-                <div class="product_pictures_smalls picture">
-                    <img src="/static/img/item{{ id }}/small4.jpg" alt="" height="100">
-                </div>
-            </div>
-            <img src="/static/img/item{{ id }}/big.jpg" alt="Товар" height="400">
+                <div class="product_page_content">
+                    {% block content %}{% endblock %}
+                </div><!-- product_page_content -->
         </div>
-    </div> <!-- product_pictures -->
-    <div class="product_description">
-    </div><!-- product_description -->
+
+    </div>
+
 </div> <!-- product -->
 </div> <!-- wrapper -->
+<script src="/static/js/scripts.js"></script>
 </body>
 </html>
