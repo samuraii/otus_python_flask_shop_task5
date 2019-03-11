@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-EXPOSE: 80
+EXPOSE 80
 
 ENV FLASK_APP=server.py
 
