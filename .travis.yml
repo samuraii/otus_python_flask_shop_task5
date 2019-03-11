@@ -1,0 +1,23 @@
+sudo: required
+
+services:
+    - docker
+
+before_install:
+    - docker build -t flask-tutorial:latest .
+
+script:
+    - docker run -d -p 5000:5000 flask-tutorial
+
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-course-1"
+    env: "DockerCourse1-env"
+    bucket_name: "elasticbeanstalk-us-east-2-927480977395"
+    bucket_path: "docker-course-1"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: "$AWS_SECRET_KEY"
