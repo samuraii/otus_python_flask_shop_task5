@@ -12,8 +12,8 @@ script:
 deploy:
     provider: elasticbeanstalk
     region: "us-east-2"
-    app: "docker-course-1"
-    env: "DockerCourse1-env"
+    app: "dockercourse1-env-flask"
+    env: "DockerCourse1-env-flask"
     bucket_name: "elasticbeanstalk-us-east-2-927480977395"
     bucket_path: "docker-course-1"
     on:
