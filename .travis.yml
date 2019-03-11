@@ -7,7 +7,7 @@ before_install:
     - docker build -t flask-tutorial:latest .
 
 script:
-    - docker run -d -p 5000:5000 flask-tutorial
+    - docker run -d -p 5000:80 flask-tutorial
 
 deploy:
     provider: elasticbeanstalk
@@ -21,6 +21,4 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key:
         secure: "$AWS_SECRET_KEY"
-
-        # 
-        # 
+        
