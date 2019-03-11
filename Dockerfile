@@ -12,6 +12,6 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-ENTRYPOINT [ "python" ]
+ENV FLASK_APP=server.py
 
-CMD [ "server.py" ]
+CMD [ "flask", "run" ]
